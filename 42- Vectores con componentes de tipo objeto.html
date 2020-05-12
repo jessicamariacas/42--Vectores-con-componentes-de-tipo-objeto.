@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jessica Maria</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        function Persona(nombre, edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.imprimirNombre = imprimirNombre;
+        }
+
+        function imprimirNombre() {
+            document.write(this.nombre + ' y su edad es ' + this.edad + '<br>');
+        }
+
+        var gente = new Array(4);
+        gente[0] = new Persona('Jessica', 18);
+        gente[1] = new Persona('Jafet', 21);
+        gente[2] = new Persona('Luimi', 01);
+        gente[3] = new Persona('Marko', 17);
+        var posmayor = 0;
+        for (var j = 1; j < gente.length; j++) {
+            if (gente[j].edad > gente[posmayor].edad) {
+                posmayor = j;
+            }
+        }
+        document.write('La persona mas grande es:<br><br>');
+        for (var j = 0; j < gente.length; j++) {
+            if (gente[j].edad == gente[posmayor].edad) {
+                gente[j].imprimirNombre();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
